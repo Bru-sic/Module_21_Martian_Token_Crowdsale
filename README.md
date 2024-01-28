@@ -12,7 +12,7 @@ KaseiCoin will be a fungible token that’s ERC-20 compliant. You’ll launch a 
 
 
 # Submission  
-Files associated with this solution:   
+Source files associated with this solution:   
 * [KaseiCoin Token smart contract source code: /Submission/Code/KaseiCoin.sol](./Submission/Code/KaseiCoin.sol)
 * [KaseiCoinCrowdsale smart contract source code: /Submission/Code/KaseiCoinCrowdsale.sol](./Submission/Code/KaseiCoinCrowdsale.sol)   
 
