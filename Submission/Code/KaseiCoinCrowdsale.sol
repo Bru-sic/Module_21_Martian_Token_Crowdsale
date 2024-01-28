@@ -35,6 +35,7 @@ contract KaseiCoinCrowdsale is Crowdsale, MintedCrowdsale {
     }
 }
 
+
 /** @notice Define the KaseiCoinCrowdsaleDeployer contract, which automates deployment of the KaseiCoinCrowdsale and the KaseiCoin contracts.
  *  * Creates an instance of the KaseiCoin token contract, storing the KaseiCoin contract's deployment address;
  *  * Creates a KaseiCoinCrowdsale contract to facilitate investors purchasing the token, storing the KaseiCoinCrowdsale contract's deployment address;

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.5.0;
+pragma solidity ^0.5.5;
 
 /// @author Bruno Ivasic
 /// @title KaseiCoin: An ERC-20 fungible token built on the Ethereum blockchain and virtual machine.
