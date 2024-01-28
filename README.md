@@ -16,31 +16,37 @@ Source files associated with this solution:
 * [KaseiCoin Token smart contract source code: /Submission/Code/KaseiCoin.sol](./Submission/Code/KaseiCoin.sol)
 * [KaseiCoinCrowdsale smart contract source code: /Submission/Code/KaseiCoinCrowdsale.sol](./Submission/Code/KaseiCoinCrowdsale.sol)   
 
-# Evaluation Evidence
-## Successful compilation of the KaseiCoin contract (Step 1.8)
+## Evaluation Evidence
+### Successful compilation of the KaseiCoin contract (Step 1.8)
 ![Successful compilation of the KaseiCoin contract](./Submission/Evidence/1-8%20Successful%20compilation%20of%20the%20KaseiCoin%20contract.png)   
 
 ---
-## Successful compilation of the KaseiCoinCrowdsale contract (Step 2.4)
+### Successful compilation of the KaseiCoinCrowdsale contract (Step 2.4)
 ![Successful compilation of the KaseiCoinCrowdsale contract](./Submission/Evidence/2-4%20Successful%20compilation%20of%20the%20KaseiCoinCrowdsale%20contract.png)   
 
 ---
 
-## Successful compilation of the KaseiCoinCrowdsaleDeployer contract (Step 3.5)
+### Successful compilation of the KaseiCoinCrowdsaleDeployer contract (Step 3.5)
 ![Successful compilation of the KaseiCoinCrowdsaleDeployer contract](./Submission/Evidence/3-5%20Successful%20compilation%20of%20the%20KaseiCoinCrowdsaleDeployer%20contract.png)   
 
 ---
 
+### Deploy and Test the Crowdsale on a Local Blockchain (Step 4)
+#### Video recording
+The following [video recording](https://drive.google.com/file/d/1gqw-1IYPgiyvVy9d0pZIXzlm-k8vcMow/view?usp=drive_link) demonstrates connecting Ganache, MetaMask and Remix, and deploying and interacting with the smart contracts in the project.   
 
-## Deploy and Test the Crowdsale on a Local Blockchain (Step 4)
-Click on the play button to view a video demonstrating:
+[![Play video of Deploy and Test the Crowdsale on a Local Blockchain (Step 4)](./Submission/Resources/Play.png)](https://drive.google.com/file/d/1gqw-1IYPgiyvVy9d0pZIXzlm-k8vcMow/view?usp=drive_link)
+
+##### Video segments by time
 * Connecting Ganache to MetaMask and importing Ganache Accounts into MetaMask 00:00 - 02:57
 * Deploying the KaseiCoinCrowdsaleDeployer contract to the local blockchain using Remix, MetaMask, and Ganache 02:57 - 04:19
 * Testing the functionality of the crowdsale contract using test accounts to buy new tokens and then checking the balances of those accounts
   * Testing the KaseiCoinCrowdsale contract 04:19 - 06:23
   * Testing the KaseiCoin contract 06:23 - 07:39
 
-[![Play video of Deploy and Test the Crowdsale on a Local Blockchain (Step 4)](./Submission/Resources/Play.png)](https://drive.google.com/file/d/1gqw-1IYPgiyvVy9d0pZIXzlm-k8vcMow/view?usp=drive_link)
+
+### Ganache transaction logs
+![Ganache transaction logs](./Submission/Evidence/4-0%20Ganache_transaction_history.png)   
 
 
 ---
