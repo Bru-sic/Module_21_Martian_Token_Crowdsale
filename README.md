@@ -101,6 +101,11 @@ View [Video recording 2](https://drive.google.com/file/d/1a1v7WCuQ9yLPz0cYqc4N0N
 * [OpenZeppelin Crowdsale](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/Crowdsale.sol)
 * [OpenZeppelin MintedCrowdsale](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/emission/MintedCrowdsale.sol)
 
+* [OpenZeppelin CappedCrowdsale](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/validation/CappedCrowdsale.sol)
+* [OpenZeppelin TimedCrowdsale](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/validation/TimedCrowdsale.sol)
+* [OpenZeppelin RefundablePostDeliveryCrowdsale](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/distribution/RefundablePostDeliveryCrowdsale.sol)
+
+
 # Installation / Setup
 * Install [Ganache](https://trufflesuite.com/docs/ganache/quickstart/)
 * Install [MetaMask](https://metamask.io/download/)
