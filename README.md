@@ -44,13 +44,15 @@ View [Video Recording 1](https://drive.google.com/file/d/1gqw-1IYPgiyvVy9d0pZIXz
   * Testing the KaseiCoinCrowdsale contract 04:19 - 06:23
   * Testing the KaseiCoin contract 06:23 - 07:39
 
-### Optional Module: Extend the Crowdsale Contract adding Goal and Duration constraints
-View [Video recording 2](https://drive.google.com/file/d/1a1v7WCuQ9yLPz0cYqc4N0NvBSOefGFYi/view?usp=drive_link) which demonstrates the enhanced contract with added Goal and Duration contraints.
+---
 
 ### Ganache transaction logs
 ![Ganache transaction logs](./Submission/Evidence/4-0%20Ganache_transaction_history.png)   
 
 --- 
+
+### Extend the Crowdsale Contract adding Goal and Duration constraints (Optional Module)
+View [Video recording 2](https://drive.google.com/file/d/1a1v7WCuQ9yLPz0cYqc4N0NvBSOefGFYi/view?usp=drive_link) which demonstrates the enhanced contract with added Goal and Duration contraints.
 
 ##### Video 2 segments by time   
 * Deploying the KaseiCoinCrowdsaleDeployer contract 00:00 - 00:48   
@@ -59,7 +61,7 @@ View [Video recording 2](https://drive.google.com/file/d/1a1v7WCuQ9yLPz0cYqc4N0N
 
 [![Play video of Extended Crowdsale Contract with added Goal and Duration constraints (Optional Module)](./Submission/Resources/Play.png)](https://drive.google.com/file/d/1a1v7WCuQ9yLPz0cYqc4N0NvBSOefGFYi/view?usp=drive_link)
 
-
+--- 
 ### Ganache transaction logs 2
 ![Ganache transaction logs 2](./Submission/Evidence/5-0%20Ganache_transaction_history_2.png)   
 
