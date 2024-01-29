@@ -12,10 +12,14 @@ import "./KaseiCoin.sol";
 /// @dev Import the Crowdsale and MintedCowdsale libraries from OpenZeppelin
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/Crowdsale.sol";
 import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/emission/MintedCrowdsale.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/validation/CappedCrowdsale.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/validation/TimedCrowdsale.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/distribution/RefundablePostDeliveryCrowdsale.sol";
 
-
-/// @dev Define the KaseiCoinCrowdsale contract composed of the KaseiCoin token classs and inheriting the OpenZeppelin Crowdsale and MintedCrowdsale contract classes.
-contract KaseiCoinCrowdsale is Crowdsale, MintedCrowdsale {
+/** @dev Define the KaseiCoinCrowdsale contract composed of the KaseiCoin token classs and inheriting the OpenZeppelin
+ * Crowdsale, MintedCrowdsale, CappedCrowdsale, TimedCrowdsale, and RefundablePostDeliveryCrowdsale contract classes.
+*/
+contract KaseiCoinCrowdsale is Crowdsale, MintedCrowdsale, CappedCrowdsale, TimedCrowdsale, RefundablePostDeliveryCrowdsale {
     /** @notice Defines the KaseiCoinCrowdsale constructor which is called once only when the smart contract is deployed.
      * The KaseiCoinCrowdsale constructor calls the Crowdsale constructor.
      * @param rate The number of KaseiCoin token units a buyer receives for each wei.
@@ -25,13 +29,31 @@ contract KaseiCoinCrowdsale is Crowdsale, MintedCrowdsale {
      * other words, 1 Token for each ETH.
      * @param wallet Address where collected funds will be forwarded to - ie usually the Crowdsale organiser's wallet.
      * @param token The KaseiCoin token smart contract being sold once deployed.
-     */
+     * @param goal_wei The crowdsale goal in wei, being the maximum amount the contract will accept in total.
+     * @param open The date/time that the crowdsale event will open - as a unix style uint timestamp
+     * @param close The date/time that the crowdsale event will close - as a unix style uint timestamp
+         */
     constructor(
         uint rate,
         address payable wallet,
-        KaseiCoin token
-    ) public Crowdsale(rate, wallet, token) {
-        /// @dev The KaseiCoinCrowdsale constructor is currently empty as the call to the Crowdsale is done just above as pert of the constructor declaration.
+        KaseiCoin token,
+        uint goal_wei, // the crowdsale goal
+        uint open, // the crowdsale opening time
+        uint close // the crowdsale closing time
+    ) public
+        /// @dev Call the inherited Crowdsale constructor passing the rate, wallet and token parameters
+        Crowdsale(rate, wallet, token)
+
+        /// @dev Call inherited CappedCrowdsale constructor passing the goal in wei parameter
+        CappedCrowdsale(goal_wei)
+
+        /// @dev Call inherited TimedCrowdsale constructor passing the opening and closing date parameters
+        TimedCrowdsale(open, close)
+
+        /// @dev Call inherited RefundableCrowdsale constructor passing the goal in wei parameter
+        RefundableCrowdsale(goal_wei) {
+
+        /// @dev The KaseiCoinCrowdsale constructor is currently empty as the call to the Crowdsale is done just above as part of the constructor declaration.
     }
 }
 
@@ -58,11 +80,17 @@ contract KaseiCoinCrowdsaleDeployer {
      * @param name The name given to the KaseiCoin token.
      * @param symbol The (ticker) symbol given to the KaseiCoin token.
      * @param wallet The Ethereum Address that will receive the funding as investors purchase KaseiCoin tokens via the KaseiCoinCrowdsale contract.
+     * @param goal_wei The goal in wei set for the crowdsale.
      */
     constructor(
         string memory name,
         string memory symbol,
-        address payable wallet ) public {
+        address payable wallet,
+        uint goal_wei ) public {
+
+        /// @dev Define a constant for how long the crowdsale will run.
+        /// uint _crowdsaleDuration = 5 minutes; // Used for testing
+        uint _crowdsaleDuration = 24 weeks;
 
         /// @dev Create an instance of the `KaseiCoin` token contract,
         /// @dev with an initial supply of 0 tokens based on the `name` and `symbol` provided at time of creation by the Crowdsale organiser.
@@ -71,8 +99,11 @@ contract KaseiCoinCrowdsaleDeployer {
         /// @dev Store a local copy of the KaseiCoin's token address so that it is all linked and accessible for ease of traceability and auditing.
         kasei_token_address = address(kasei_token);
 
-        /// @dev Create an instance of the `KaseiCoinCrowdsale` contract with an exchange rate of 1 Ether to 1 Token, the wallet address of theCrowdsale organiser and the KaseiCoin contract.
-        KaseiCoinCrowdsale kasei_crowdsale = new KaseiCoinCrowdsale(1, wallet, kasei_token);
+        /** @dev Create an instance of the `KaseiCoinCrowdsale` contract with an exchange rate of 1 Ether to 1 Token, the wallet address of theCrowdsale organiser,
+         *  the KaseiCoin contract, the goal in gwei, the crowdsale opening date/time (as a UNIX epoch) being the date the KaseiCoinCrowdsale smart contract is deployed,
+         *  and the crowdsale closing date/time (as a UNIX epoch) being the opening date/time + the duration of the crowdsale.
+         */
+        KaseiCoinCrowdsale kasei_crowdsale = new KaseiCoinCrowdsale(1, wallet, kasei_token, goal_wei, now, now + _crowdsaleDuration);
           
         /// @dev Store a local copy of the KaseiCoinCrowdsale's address so that it is all linked and accessible for ease of traceability and auditing.
         kasei_crowdsale_address = address(kasei_crowdsale);
