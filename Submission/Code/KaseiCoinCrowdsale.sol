@@ -32,14 +32,14 @@ contract KaseiCoinCrowdsale is Crowdsale, MintedCrowdsale, CappedCrowdsale, Time
      * @param goal_wei The crowdsale goal in wei, being the maximum amount the contract will accept in total.
      * @param open The date/time that the crowdsale event will open - as a unix style uint timestamp
      * @param close The date/time that the crowdsale event will close - as a unix style uint timestamp
-         */
+     */
     constructor(
         uint rate,
         address payable wallet,
         KaseiCoin token,
-        uint goal_wei, // the crowdsale goal
-        uint open, // the crowdsale opening time
-        uint close // the crowdsale closing time
+        uint goal_wei,
+        uint open,
+        uint close
     ) public
         /// @dev Call the inherited Crowdsale constructor passing the rate, wallet and token parameters
         Crowdsale(rate, wallet, token)
