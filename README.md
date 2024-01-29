@@ -33,28 +33,38 @@ Source files associated with this solution:
 
 ### Deploy and Test the Crowdsale on a Local Blockchain (Step 4)
 #### Video recording
-View the [video recording](https://drive.google.com/file/d/1gqw-1IYPgiyvVy9d0pZIXzlm-k8vcMow/view?usp=drive_link) which demonstrates connecting Ganache, MetaMask and Remix, and deploying and interacting with the smart contracts in the project.   
+View [Video Recording 1](https://drive.google.com/file/d/1gqw-1IYPgiyvVy9d0pZIXzlm-k8vcMow/view?usp=drive_link) which demonstrates connecting Ganache, MetaMask and Remix, and deploying and interacting with the smart contracts in the project.   
 
 [![Play video of Deploy and Test the Crowdsale on a Local Blockchain (Step 4)](./Submission/Resources/Play.png)](https://drive.google.com/file/d/1gqw-1IYPgiyvVy9d0pZIXzlm-k8vcMow/view?usp=drive_link)
 
-##### Video segments by time
+##### Video 1 segments by time
 * Connecting Ganache to MetaMask and importing Ganache Accounts into MetaMask 00:00 - 02:57
 * Deploying the KaseiCoinCrowdsaleDeployer contract to the local blockchain using Remix, MetaMask, and Ganache 02:57 - 04:19
 * Testing the functionality of the crowdsale contract using test accounts to buy new tokens and then checking the balances of those accounts
   * Testing the KaseiCoinCrowdsale contract 04:19 - 06:23
   * Testing the KaseiCoin contract 06:23 - 07:39
 
+### Optional Module: Extend the Crowdsale Contract adding Goal and Duration constraints
+View [Video recording 2](https://drive.google.com/file/d/1a1v7WCuQ9yLPz0cYqc4N0NvBSOefGFYi/view?usp=drive_link) which demonstrates the enhanced contract with added Goal and Duration contraints.
 
 ### Ganache transaction logs
 ![Ganache transaction logs](./Submission/Evidence/4-0%20Ganache_transaction_history.png)   
 
+--- 
+
+##### Video 2 segments by time   
+* Deploying the KaseiCoinCrowdsaleDeployer contract 00:00 - 00:48   
+* Testing the functionality of the crowdsale contract 00:48 - 05:21   
+* Finalizing the crowdsale contract 05:21 - 06:40   
+
+[![Play video of Extended Crowdsale Contract with added Goal and Duration constraints (Optional Module)](./Submission/Resources/Play.png)](https://drive.google.com/file/d/1a1v7WCuQ9yLPz0cYqc4N0NvBSOefGFYi/view?usp=drive_link)
+
+
+### Ganache transaction logs 2
+![Ganache transaction logs 2](./Submission/Evidence/5-0%20Ganache_transaction_history_2.png)   
+
 
 ---
-# Scope for Future Enhancements
-Future version may include:
-* CappedCrowdsale: To cap the total amount of ether that the crowdsale can raise.
-* TimedCrowdsale: To set a time limit for the crowdsale by adding an opening time and a closing time.
-* RefundablePostDeliveryCrowdsale: To include the capability of refunding investors of the crowdsale if the funding goal isn't met.
 
 # Technologies
 * [Solidity](https://soliditylang.org/) - A statically-typed curly-braces programming language designed for developing smart contracts that run on Ethereum
