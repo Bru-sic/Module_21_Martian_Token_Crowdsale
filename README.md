@@ -33,7 +33,7 @@ Source files associated with this solution:
 
 ### Deploy and Test the Crowdsale on a Local Blockchain (Step 4)
 #### Video recording
-The following [video recording](https://drive.google.com/file/d/1gqw-1IYPgiyvVy9d0pZIXzlm-k8vcMow/view?usp=drive_link) demonstrates connecting Ganache, MetaMask and Remix, and deploying and interacting with the smart contracts in the project.   
+View the [video recording](https://drive.google.com/file/d/1gqw-1IYPgiyvVy9d0pZIXzlm-k8vcMow/view?usp=drive_link) which demonstrates connecting Ganache, MetaMask and Remix, and deploying and interacting with the smart contracts in the project.   
 
 [![Play video of Deploy and Test the Crowdsale on a Local Blockchain (Step 4)](./Submission/Resources/Play.png)](https://drive.google.com/file/d/1gqw-1IYPgiyvVy9d0pZIXzlm-k8vcMow/view?usp=drive_link)
 
